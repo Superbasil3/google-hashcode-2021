@@ -1,6 +1,6 @@
 import numpy as np
 import time
-from read import read_file, write_file
+from read import read_file, write_file, write_file_normer
 import os
 from compute_score import compute_score
 
@@ -70,7 +70,7 @@ def build_dummy_schedule(full_dict_inters_car, magic_number=0.5):
 
 tab_file = ["a.txt","b.txt","c.txt","d.txt","e.txt","f.txt"]
 
-tab_sqrt_power = [0.4,0.51,0.6]
+tab_sqrt_power = [0.4115]
 for sqrt_power in tab_sqrt_power:
     current_magic_number_wait = sqrt_power
 
@@ -109,6 +109,6 @@ for sqrt_power in tab_sqrt_power:
         # print("dict_schedule_solution = ", dict_schedule_solution)
 
         name_file_out = name_file+str(current_magic_number_wait)
-        write_file(name_file_out, dict_schedule_solution)
 
-        # print(compute_score(cars, dict_schedule_solution, streets, int(bonus), duration))
+        ## print(compute_score(cars, dict_schedule_solution, streets, int(bonus), duration))
+        write_file_normer("{0}_{1}".format(name_file,sqrt_power), dict_schedule_solution,1.3)

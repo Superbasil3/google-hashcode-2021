@@ -1,6 +1,7 @@
 import numpy as np
 import time
 from read import read_file, write_file, write_file_normer
+from compute_score import compute_score
 import os
 
 
@@ -105,5 +106,4 @@ for file in tab_file:
         print("duration build_dummy_schedule = ", time.time() - start_time)
 
     # print("dict_schedule_solution = ", dict_schedule_solution)
-
-    write_file_normer(name_file, dict_schedule_solution,3)
+    write_file(name_file, dict_schedule_solution)

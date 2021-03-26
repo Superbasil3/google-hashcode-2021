@@ -1,6 +1,7 @@
 
 from functools import *
 from math import *
+import random
 
 
 def read_file(filename):
@@ -44,8 +45,9 @@ def write_file(filename, intersection_dict):
         for key, value in intersection_dict.items():
             the_file.write("{0} \n".format(key)) # intersection ID
             the_file.write("{0} \n".format(len(value))) # nbr street for schedule in intersection
-            for value_car in sorted(value, key = lambda i: i[1]):
-                the_file.write("{0} {1}\n".format(value_car[0],value_car[1])) # for each street in the intersection : street_name time
+            random.shuffle(value)
+            for value_car in value:
+                the_file.write("{0} 1\n".format(value_car[0],value_car[1])) # for each street in the intersection : street_name time
 
 def write_file_normer(filename, intersection_dict,nombre_magic):
     """
