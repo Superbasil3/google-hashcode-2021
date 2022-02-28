@@ -72,7 +72,8 @@ def build_dummy_schedule(full_dict_inters_car):
 
     return dict_schedule_solution
 
-tab_file = ["a.txt","b.txt","c.txt","d.txt","e.txt","f.txt"]
+#tab_file = ["a.txt","b.txt","c.txt","d.txt","e.txt","f.txt"]
+tab_file = ["a.txt"]
 for file in tab_file:
     input_folder = "input"
     name_file = file
